@@ -4,7 +4,12 @@
     "debugType": "portable",
     "emitEntryPoint": true
   },
+  "userSecretsId": "DdhpCore.ClubImporter",
   "dependencies": {
+    "Microsoft.Extensions.PlatformAbstractions": "1.0.0",
+    "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview2-final",
+    "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0",
+    "Microsoft.Extensions.Configuration.EnvironmentVariables":  "1.1.0", 
     "WindowsAzure.Storage": "7.2.1",
     "Newtonsoft.Json": "9.0.1"
   },
@@ -21,5 +26,13 @@
         "portable-net452+win81"
       ]
     }
+  },
+  "tools": {
+    "Microsoft.Extensions.SecretManager.Tools": "1.0.0-preview2-final"
+  },
+  "scripts": {
+    "postcompile": [
+      "xcopy /Y %project:Directory%\\project.json bin\\Debug\\netcoreapp1.0"
+    ]
   }
 }

@@ -1,6 +1,6 @@
 using System;
 
-namespace DdhpCore.ClubImporter.Runner.Models
+namespace DdhpCore.ClubImporter.Runner.Models.Events
 {
     public class ClubPlayerDraftedEvent
     {

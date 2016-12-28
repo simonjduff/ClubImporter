@@ -1,4 +1,4 @@
-namespace DdhpCore.ClubImporter.Runner.Models
+namespace DdhpCore.ClubImporter.Runner.Models.Events
 {
     using System;
     using Microsoft.WindowsAzure.Storage.Table;
