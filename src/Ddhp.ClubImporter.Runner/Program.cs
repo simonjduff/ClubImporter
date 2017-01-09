@@ -117,7 +117,7 @@
                                 DraftPick = contract.DraftPick
                             };
 
-                            var insertEvent = new Event(club.Id, version++, "importContract", JsonConvert.SerializeObject(contractEvent));
+                            var insertEvent = new Event(club.Id, version++, "ContractImported", JsonConvert.SerializeObject(contractEvent));
                             insert.Add(TableOperation.Insert(insertEvent));
                         }
 
