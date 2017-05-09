@@ -6,3 +6,6 @@ project.lock.json
 .DS_Store
 *.pyc
 .vscode
+.vs/
+*.user
+Backup/

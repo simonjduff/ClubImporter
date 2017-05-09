@@ -30,7 +30,7 @@ namespace DdhpCore.ClubImporter.Runner.Models.Events
 
         [ColumnName("eventType")]
         public string EventType{get;set;}
-        [ColumnName("payload")]
+        [ColumnName("payload")] 
         public string Payload{get;set;}
         public T GetPayload<T>()
         {
@@ -44,8 +44,7 @@ namespace DdhpCore.ClubImporter.Runner.Models.Events
             foreach (var property in ColumnNameProperties)
             {
                 var value = properties[property.Item2.ColumnName].StringValue;
-                Type propertyType = property.Item1.PropertyType;
-                property.Item1.SetValue(this, JsonConvert.DeserializeObject(value, propertyType));
+                property.Item1.SetValue(this, value);
             }
         }
 
@@ -55,7 +54,7 @@ namespace DdhpCore.ClubImporter.Runner.Models.Events
 
             foreach (var propertyInfo in ColumnNameProperties)
             {
-                dictionary.Add(propertyInfo.Item2.ColumnName, new EntityProperty(JsonConvert.SerializeObject(propertyInfo.Item1.GetValue(this))));
+                dictionary.Add(propertyInfo.Item2.ColumnName, new EntityProperty((string)propertyInfo.Item1.GetValue(this)));
                 dictionary.Remove(propertyInfo.Item1.Name);
             }
 
